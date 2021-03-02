@@ -1,6 +1,6 @@
 # AlgoExpert
-Here records my submitted codes on AlgoExpert, 
-and a entrypoint `run.py` to test the methods. 
+Here records my submitted codes on AlgoExpert,
+and a entrypoint `run.py` to test the methods.
 
 ### Usage:
 ```
