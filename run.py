@@ -1,6 +1,7 @@
 import time
 import copy
 import importlib
+import argparse
 
 
 def timeit(method):
@@ -8,11 +9,7 @@ def timeit(method):
         ts = time.time()
         result = method(*args, **kw)
         te = time.time()
-        if 'log_time' in kw:
-            name = kw.get('log_name', method.__name__.upper())
-            kw['log_time'][name] = int((te - ts) * 1000)
-        else:
-            print(f'{method.__name__}: {(te - ts) * 1000} ms')
+        print(f'{method.__name__}: {(te - ts) * 1000} ms')
         return result
     return timed
 
@@ -42,15 +39,23 @@ class Runner:
         func = self.load(file, self.question)
         self.verify(func)
 
-    def all(self, menu: list):
-        for item in menu:
-            print(f'Timing {item}:')
-            self.single(item)
+    def all(self, recipes: list):
+        for recipe in recipes:
+            print(f'Timing {recipe}:')
+            self.single(recipe)
+
+
+def main(args):
+    r = Runner(args.category, args.question)
+    r.all(args.recipe)
 
 
 if __name__ == "__main__":
-    category = 'array'
-    question = 'nonConstructibleChange'
-    menu = ['1', '2']
-    r = Runner(category, question)
-    r.all(menu)
+    parser = argparse.ArgumentParser(description='Run test')
+    parser.add_argument('-c', '--category', type=str, help='select category',
+                        dest='category', required=True)
+    parser.add_argument('-q', '--question', type=str, help='select question',
+                        dest='question', required=True)
+    parser.add_argument('-r', '--recipe', type=str, help='select recipes',
+                        nargs='+', required=True)
+    main(parser.parse_args())
