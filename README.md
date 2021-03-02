@@ -8,5 +8,5 @@ $ python run.py -c CATEGORY -q QUESTION -R [RECIPE ...]
 ```
 An example to test `array.nonConstrutibleChange` solutions:
 ```
-$ python run.py -c array -q nonConstructibleChange -r 1, 2
+$ python run.py -c array -q nonConstructibleChange -r 1 2
 ```
