@@ -9,7 +9,7 @@ def timeit(method):
         ts = time.time()
         result = method(*args, **kw)
         te = time.time()
-        print(f"{method.__name__}: {(te - ts) * 1000} ms")
+        print(f"> {(te - ts) * 1000} ms")
         return result
 
     return timed
