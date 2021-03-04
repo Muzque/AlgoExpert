@@ -3,7 +3,7 @@ def isMonotonic(array):
         return True
     direction = None
     for idx in range(1, len(array)):
-        diff = array[idx] - array[idx-1]
+        diff = array[idx] - array[idx - 1]
         if diff == 0:
             continue
         if direction is None:

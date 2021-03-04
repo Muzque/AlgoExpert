@@ -4,7 +4,7 @@ samples = [
             "competitions": [
                 ["HTML", "C#"],
                 ["C#", "Python"],
-                ["Python", "HTML"]
+                ["Python", "HTML"],
             ],
             "results": [0, 0, 1],
         },
