@@ -42,15 +42,15 @@ class Runner:
         func = self.load(file, self.question)
         self.verify(func)
 
-    def all(self, recipes: list):
-        for recipe in recipes:
-            print(f"Timing solution: {recipe}:")
-            self.single(recipe)
+    def all(self, solutions: list):
+        for solution in solutions:
+            print(f"Timing solution: {solution}:")
+            self.single(solution)
 
 
 def main(args):
     r = Runner(args.category, args.question)
-    r.all(args.recipe)
+    r.all(args.solution)
 
 
 if __name__ == "__main__":
@@ -72,10 +72,10 @@ if __name__ == "__main__":
         required=True,
     )
     parser.add_argument(
-        "-r",
-        "--recipe",
+        "-s",
+        "--solution",
         type=str,
-        help="select recipes",
+        help="select solutions",
         nargs="+",
         required=True,
     )
