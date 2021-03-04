@@ -9,10 +9,10 @@ An example to test `array.nonConstrutibleChange` solutions:
 ```
 $ python run.py -c array -q nonConstructibleChange -r 1 2
 ```
-Sample output
+Stdout:
 ```
-Timing 1:
-> 3.2019615173339844 ms
-Timing 2:
-> 0.9191036224365234 ms
+Timing solution: 1:
+> 1.2600421905517578 ms
+Timing solution: 2:
+> 0.4138946533203125 ms
 ```

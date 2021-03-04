@@ -44,7 +44,7 @@ class Runner:
 
     def all(self, recipes: list):
         for recipe in recipes:
-            print(f"Timing {recipe}:")
+            print(f"Timing solution: {recipe}:")
             self.single(recipe)
 
 
