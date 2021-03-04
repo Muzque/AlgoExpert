@@ -33,7 +33,9 @@ class Runner:
             answer = sample["output"]
             passed = result == answer
             if not passed:
-                print(f"{passed}: Expect {answer} but got {result}")
+                print(f"Wrong Answer: Expect {answer} but got {result}")
+                print(f"Input:")
+                print(sample['input'])
 
     @timeit
     def single(self, file):
